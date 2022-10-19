@@ -1,53 +1,30 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './style.css';
+import { Navigation } from './components/Navigation';
+import { Books } from './components/Books'
+import { UsersPage } from './components/UsersPage/UsersPage'
+import { Invitations } from './components/UsersPage/Invitations' 
+import { Home } from './components/Home'
 
-function UsersPage() {
-  return (
-    <div>
-      <ul>
-        <li>Adam</li>
-        <li>Natalia</li>
-      </ul>
-    </div>
-  );
-}
-
-function AppContent() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <nav className="navigation-header">
-        <div className="app-logo" onClick={() => navigate('/')}></div>
-        <Link id="menu-home" className="menu-item" to="/">
-          Home
-        </Link>
-        <Link id="menu-books" className="menu-item" to="/books">
-          Books
-        </Link>
-        <Link id="menu-users" className="menu-item" to="/users">
-          Users
-        </Link>
-        <Link id="menu-invitations" className="menu-item" to="/users/invitations.html">
-          Invitations
-        </Link>
-      </nav>
-      <p>Helllooooo</p>
-    </>
-  );
-}
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
+       <Navigation />
+
      <Routes>
-        <Route path="books" element="I am a books" />
+        <Route path="books" element={<Books />}/>
+        <Route path="books/1" element={<Books />} />
+        <Route path="books/2" element={<Books />} />
         <Route path="users" element={<UsersPage />} />
-        <Route path="users/invitations" element="I am invitations" />
-        <Route path="/" element="Welcome" />
+        <Route path="users/invitations" element={<Invitations/>} />
+        <Route path="/" element={<Home />} />
       </Routes>
-      <AppContent />
-    </BrowserRouter>
+
+     
+
+    </Router>
   );
 }
 
