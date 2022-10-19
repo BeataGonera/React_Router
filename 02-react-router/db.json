@@ -1,0 +1,19 @@
+{
+  "books": [
+    {
+      "id": "0",
+      "title": "Kot w butach",
+      "author": "Charles Perrault"
+    },
+    {
+      "id": "1",
+      "title": "Kopciuszek",
+      "author": "Grimm"
+    },
+    {
+      "id": "2",
+      "title": "Hobbit",
+      "author": "JRR Tolkien"
+    }
+  ]
+}
