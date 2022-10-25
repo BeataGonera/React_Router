@@ -18,9 +18,6 @@
 }
 
 .menu-item__active { 
-    font-weight: 600;
-    text-decoration: none;
-    padding: 1rem;
     background: #393e48;
     color: #a6eaff;
 }
